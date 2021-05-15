@@ -10,7 +10,7 @@ import (
 )
 
 func fundDetailsGetRequest(orderbookId int) []byte {
-	res, err := http.Get(key.GetFundDetailsUrl(orderbookId))
+	res, err := http.Get(key.GetFundDetailsUrl(fmt.Sprint(orderbookId)))
 	if err != nil {
 		println(err)
 	}
