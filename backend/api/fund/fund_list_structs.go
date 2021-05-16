@@ -25,20 +25,20 @@ type fundListRequestModel struct {
 	GovernanceRatingFilter         []string
 }
 
-type fundListResponseModel struct {
-	FundListViews []fundListViews
+type FundListResponseModel struct {
+	FundListViews []FundListViews
 	TotalNoFunds  int
-	FilterCounts  map[string][]counts
+	FilterCounts  map[string][]Counts
 }
 
-type counts struct {
+type Counts struct {
 	Title  string
 	Count  int
 	Type   string
 	Active bool
 }
 
-type fundListViews struct {
+type FundListViews struct {
 	Isin                                  string
 	Name                                  string
 	Rating                                int
@@ -74,7 +74,7 @@ type fundListViews struct {
 	HasCurrencyExchangeFee                bool
 	NrOfOwners                            int
 	OrderbookId                           int
-	Taglist                               []tagList
+	Taglist                               []TagList
 	Category                              string
 	IndexFund                             bool
 	StartDate                             string
@@ -86,7 +86,7 @@ type fundListViews struct {
 	SustainabilityRating                  int
 	SustainabilityRatingCategoryName      string
 	ProductInvolvements                   []string
-	ProductInvolvementViews               []productInvolvementViews
+	ProductInvolvementViews               []ProductInvolvementViews
 	SustainabilityProfileIcon             string
 	CarbonSolutionsInvolvement            float32
 	AumCoveredCarbon                      float32
@@ -101,12 +101,12 @@ type fundListViews struct {
 	RecommendedHoldingPeriodValue         string
 }
 
-type tagList struct {
+type TagList struct {
 	Title           string
 	FundTagCategory string
 }
 
-type productInvolvementViews struct {
+type ProductInvolvementViews struct {
 	Product            string
 	ProductDescription string
 	Value              float32

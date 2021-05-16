@@ -1,6 +1,6 @@
 package fund
 
-type fundDetailsResponseModel struct {
+type FundDetailsResponseModel struct {
 	OrderbookId                   string // int in list but string in details
 	Name                          string
 	MinimumThresholdAdditionalBuy float32

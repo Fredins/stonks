@@ -47,8 +47,8 @@ func fundListPostRequest() []byte {
 	return responseJson
 }
 
-func unmarshalFundListJson(responseJson []byte) fundListResponseModel {
-	var fundlist fundListResponseModel
+func unmarshalFundListJson(responseJson []byte) FundListResponseModel {
+	var fundlist FundListResponseModel
 	json.Unmarshal(responseJson, &fundlist)
 	return fundlist
 }
@@ -57,7 +57,7 @@ func QuerryFundListJson() []byte {
 	return fundListPostRequest()
 }
 
-func QuerryFundList() fundListResponseModel {
+func QuerryFundList() FundListResponseModel {
 	responseJson := fundListPostRequest()
 	fundList := unmarshalFundListJson(responseJson)
 	return fundList
