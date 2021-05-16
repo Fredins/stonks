@@ -121,7 +121,7 @@ func InsertList(l fund.FundListViews) {
 		log.Fatal(err)
 	}
 	n, _ := res.RowsAffected()
-	fmt.Printf("affected %d rows", n)
+	fmt.Printf("affected %d rows\n", n)
 }
 
 func InsertDetails(d fund.FundDetailsResponseModel) {
