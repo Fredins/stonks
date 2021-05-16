@@ -7,12 +7,12 @@ import (
 	"os"
 )
 
-func jsonPrint(uglyJson []byte) {
+func JsonPrint(uglyJson []byte) {
 	var prettyJson bytes.Buffer
 	json.Indent(&prettyJson, uglyJson, "", "   ")
 	prettyJson.WriteTo(os.Stdout)
 }
-func structPrint(v interface{}) {
+func StructPrint(v interface{}) {
 	prettyJson, err := json.MarshalIndent(v, "", "  ")
 	if err != nil {
 		fmt.Println(err)
