@@ -21,8 +21,8 @@ func fundDetailsGetRequest(orderbookId int) []byte {
 	return responseJson
 }
 
-func unmarshalFundDetailsJson(responseJson []byte) FundDetailsResponseModel {
-	var fundDetails FundDetailsResponseModel
+func unmarshalFundDetailsJson(responseJson []byte) FundDetails {
+	var fundDetails FundDetails
 	err := json.Unmarshal(responseJson, &fundDetails)
 	if err != nil {
 		fmt.Println(err)
@@ -34,7 +34,7 @@ func QuerryFundDetailsJson(orderbookId int) []byte {
 	return fundDetailsGetRequest(orderbookId)
 }
 
-func QuerryFundDetails(orderbookId int) FundDetailsResponseModel {
+func QuerryFundDetails(orderbookId int) FundDetails {
 	responseJson := fundDetailsGetRequest(orderbookId)
 	fundDetails := unmarshalFundDetailsJson(responseJson)
 	return fundDetails
